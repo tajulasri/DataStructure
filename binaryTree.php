@@ -84,20 +84,20 @@ class BST {
 		if( $find != false) {
 
 			if($find->left() == null ) {
-				$find->setLeft($value);
+				$find->setLeft([$value]);
 			}
 			elseif($find->right() == null) {
-				$find->setRight($value);
+				$find->setRight([$value]);
 			}
 		}
 		else {
 
 			if($node->left() == null ) {
-				$node->setLeft($value);
+				$node->setLeft([$value]);
 			}
 			elseif($node->right() == null) {
 
-				$node->setRight($value);
+				$node->setRight([$value]);
 			}
 		}
  	}
@@ -173,6 +173,7 @@ $j = new Node(30);
 //initiate tree
 $bt = new BST($root);
 $bt->insert($root,$b);
+$bt->insert($root,$c);
+$bt->insert($b,$d);
 
-
-var_dump($bt->insert($root,$c));
+print_r($bt->tree());
