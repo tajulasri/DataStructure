@@ -74,3 +74,46 @@ Data structure Learning
 
 
 ```
+
+
+##Linked list example
+
+```php
+
+$a = new Node(8);
+$b = new Node(5);
+$c = new Node(6);
+
+$linkedlist = new LinkedList();
+$linkedlist->create($a);
+$linkedlist->create($b);
+$linkedlist->create($c);
+$linkedlist->link($a,$b);
+$linkedlist->link($b,$c);
+
+print_r($linkedlist->toArray());
+
+Array
+(
+    [0] => Array
+        (
+            [0] => 8
+            [1] => 5
+        )
+
+    [1] => Array
+        (
+            [0] => 5
+            [1] => 6
+        )
+
+    [2] => Array
+        (
+            [0] => 6
+            [1] =>
+        )
+
+)
+
+
+```
