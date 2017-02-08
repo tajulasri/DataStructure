@@ -79,7 +79,27 @@ class BST {
 	public function insert(Node $node,Node $value)
 	{
 		//should using traverse searching here
-		
+		$find = $this->traverse($this->tree,$value->value());
+
+		if( $find != false) {
+
+			if($find->left() == null ) {
+				$find->setLeft($value);
+			}
+			elseif($find->right() == null) {
+				$find->setRight($value);
+			}
+		}
+		else {
+
+			if($node->left() == null ) {
+				$node->setLeft($value);
+			}
+			elseif($node->right() == null) {
+
+				$node->setRight($value);
+			}
+		}
  	}
 
 
@@ -93,9 +113,13 @@ class BST {
 	{
 		$root = $array[0];
 
+		if($root->value() == $needle) {
+			return $root;
+		}
+
 		if($root->left() != null ) {
 
-			if( $root->left()[0]->value() === $needle) {
+			if( $root->left()[0]->value() == $needle) {
 
 				return $root->left()[0];
 			}
@@ -107,7 +131,7 @@ class BST {
 
 		if($root->right() != null ) {
 
-			if( $root->right()[0]->value() === $needle) {
+			if( $root->right()[0]->value() == $needle) {
 
 				return $root->right()[0];
 			}
@@ -148,6 +172,7 @@ $j = new Node(30);
 
 //initiate tree
 $bt = new BST($root);
-//$bt->insert($root,$b);
+$bt->insert($root,$b);
 
-var_dump($bt->insert($root,$b));
+
+var_dump($bt->insert($root,$c));
