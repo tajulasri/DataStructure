@@ -1,7 +1,7 @@
 <?php
 
 /**
- * implementation of binary tree using php
+ * implementation of insertion binary tree using php
  */
 
 
@@ -175,5 +175,6 @@ $bt = new BST($root);
 $bt->insert($root,$b);
 $bt->insert($root,$c);
 $bt->insert($b,$d);
+$bt->insert($d,$j);
 
 print_r($bt->tree());
